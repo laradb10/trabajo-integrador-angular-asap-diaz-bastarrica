@@ -1,0 +1,41 @@
+<div class="home-container">
+  <div class="dino">
+    <div class="dino-text">
+      <h1 class="title">Explore and study</h1>
+      <h1 class="title"> the mesozoic era</h1>
+      <div class="actions">
+        <button class="primary-btn" [routerLink]="['/analysis']">Go to analysis</button>
+        <button class="primary-btn" [routerLink]="['/dinosaurs']">Search dinosaurs</button>
+      </div>
+    </div>
+
+    <div class="dino-image">
+      <img src="assets/brontosaurio.svg" alt="Dinosaur " />
+    </div>
+  </div>
+
+  <div class="analysis-box">
+    <h2> <mat-icon class="title-icon" aria-hidden="false" aria-label="analysis">analytics</mat-icon> Your research</h2>
+    <div class="analysis-content">
+      @if (lastAnalysis().length === 0) {
+      <p class="research">You don't have any research done yet. Go to Analysis if you want to start one!</p>
+      } @else {
+      <div class="analysis-cards">
+        @for (a of lastAnalysis().slice(0,3); track a.id) {
+        <div class="analysis-card" [routerLink]="['/analysis-details', a.id]">
+          <h3>{{ a.name }}</h3>
+          <p>{{ a.description }}</p>
+          <p>{{ a.habitat }}</p>
+          <p>{{ a.era }}</p>
+          <p>{{ a.diet }}</p>
+          <span class="edit-link">
+            <mat-icon aria-hidden="false" aria-label="edit">edit</mat-icon>
+          </span>
+        </div>
+        }
+      </div>
+      }
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,107 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  padding: 1rem 1.5rem;
+  background: #a48450;
+  color: #000000;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  min-height: 56px;
+}
+
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.logo {
+  margin: 0;
+  line-height: 1;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+}
+
+
+.burger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+
+.burger mat-icon {
+  width: 24px;
+  height: 24px;
+  font-size: 24px;
+  line-height: 1;
+}
+
+.menu {
+  position: absolute;
+  top: 60px;
+  left: 1.5rem;
+  background: #f8f5ee;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  display: none;
+  flex-direction: column;
+  padding: 0.5rem 1rem;
+}
+
+.menu a {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.4rem 0;
+  text-decoration: none;
+  color: #2f402d;
+}
+
+.menu a:hover {
+  background: rgba(77, 57, 45, 0.1);
+  border-radius: 4px;
+}
+
+.menu.open {
+  display: flex;
+}
+
+.page {
+  min-height: calc(100vh - 60px);
+  padding: 2rem 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.logo-icon {
+  width: 35px;
+  height: 35px;
+  margin-right: 0.3rem;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}

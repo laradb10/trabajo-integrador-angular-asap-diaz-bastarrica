@@ -1,0 +1,122 @@
+.dino-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.dino {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+.dino-text {
+  flex: 1;
+}
+
+.title {
+  font-size: 45px;
+  color: #4d392d;
+  margin-bottom: 2rem;
+  text-align: left;
+  margin-left: 5%;
+}
+
+.actions {
+  display: flex;
+}
+
+.primary-btn {
+  background-color: #4d392d;
+  color: #fff;
+  border: none;
+  padding: 1rem 1.5rem;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  margin-left: 5%;
+}
+
+.primary-btn:hover {
+  background-color: #2f241c;
+}
+
+.dino-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dino-image img {
+  max-width: 100%;
+  height: auto;
+  margin-right: 50%;
+}
+
+.analysis-box {
+  background: #fff;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+}
+
+.analysis-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.2rem;
+  margin-top: 1rem;
+}
+
+.analysis-card {
+  background: #e1f1cd;
+  border-radius: 0.8rem;
+  padding: 1rem;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 120px;
+}
+
+.analysis-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+}
+
+.analysis-card h3 {
+  font-size: 1.1rem;
+  margin: 0 0 0.5rem;
+  color: #4d392d;
+}
+
+.analysis-card p {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: auto;
+}
+
+.analysis-card .edit-link {
+  margin-top: 0.8rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #4d392d;
+  align-self: flex-end;
+}
+
+.title-icon {
+  font-size: 28px;
+  color: #4d392d;
+}
+
+.research {
+  font-size: 1.1rem;
+  font-weight: 300;
+  margin-top: 2%;
+  display: flex;
+  justify-content: center;
+}

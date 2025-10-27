@@ -1,0 +1,47 @@
+<div class="dino-container">
+  <h1 class="title">{{ pageTitle }}</h1>
+
+  <div class="filters">
+    <input type="text" placeholder="Search..." (input)="updateSearch(($event.target).value)" />
+
+    <div class="letters">
+      @for (letter of 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split(''); track letter) {
+      <button (click)="filterByLetter(letter)" [class.active]="letterFilter() === letter">
+        {{ letter }}
+      </button>
+      }
+    </div>
+
+    @if (showClear()) {
+    <button class="clear-btn" (click)="clearFilters()">Limpiar filtros ✖</button>
+    }
+  </div>
+
+  @if (loading()) {
+  <div class="loading-screen">
+    <mat-spinner diameter="60"></mat-spinner>
+    <p>Loading dinosaurs...</p>
+  </div>
+  } @else {
+  <div class="dino-list">
+    @for (dino of filteredDinos(); track dino.name) {
+    <div class="dino-card" [class.in-analysis]="isInAnalysis(dino)">
+      <div class="dino-info">
+        <h2>{{ dino.name }}</h2>
+        <p>{{ dino.description }}</p>
+      </div>
+
+      <div class="dino-actions">
+        <button mat-icon-button color="warn" (click)="addToFavorites(dino)">
+          <mat-icon>{{ isFavorite(dino) ? 'favorite' : 'favorite_border' }}</mat-icon>
+        </button>
+        <button mat-icon-button color="primary" (click)="addToAnalysis(dino)">
+          <mat-icon>add_circle</mat-icon>
+        </button>
+
+      </div>
+    </div>
+    }
+  </div>
+  }
+</div>

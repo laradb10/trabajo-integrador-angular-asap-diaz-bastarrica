@@ -1,0 +1,62 @@
+<div class="analysis-detail-container">
+    <h2>Analysis</h2>
+
+    <form [formGroup]="form" (ngSubmit)="onSave()">
+        <label>
+            Name:
+            <input type="text" formControlName="name" />
+        </label>
+
+        <label>
+            Description:
+            <textarea formControlName="description"></textarea>
+        </label>
+
+        <label>
+            Habitat:
+            <select formControlName="habitat">
+
+                @for (h of habitatOptions; track h) {
+                <option [value]="h">{{ h }}</option>
+                }
+            </select>
+        </label>
+
+        <label>
+            Diet:
+            <select formControlName="diet">
+                @for (d of dietOptions; track d) {
+                <option [value]="d">{{ d }}</option>
+                }
+            </select>
+        </label>
+
+        <label>
+            Period:
+            <select formControlName="era">
+                @for (e of eraOptions; track e) {
+                <option [value]="e">{{ e }}</option>
+                }
+            </select>
+        </label>
+
+        <label>
+            Notes:
+            <textarea formControlName="notes"></textarea>
+        </label>
+
+        <div formArrayName="customFields">
+            @for (field of customFields.controls; let i = $index; track i) {
+            <div [formGroupName]="i">
+                <input type="text" formControlName="label" placeholder="Nombre del campo" />
+                <textarea formControlName="value" placeholder="Contenido"></textarea>
+                <button type="button" (click)="removeCustomField(i)">Delete</button>
+            </div>
+            }
+        </div>
+
+        <button type="button" class="add-btn" (click)="addCustomField()">+ Add custom field</button>
+
+        <button type="submit">Save</button>
+    </form>
+</div>

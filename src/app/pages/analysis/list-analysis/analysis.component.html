@@ -1,0 +1,38 @@
+<div class="analysis-container">
+  <h1 class="title">Dinosaur Analysis</h1>
+
+  @if (loading()) {
+  <div class="loading-screen">
+    <mat-spinner diameter="50"></mat-spinner>
+    <p>Loading analysis...</p>
+  </div>
+  } @else {
+  @if (analysisList().length === 0) {
+  <p class="no-analysis">No analysis yet.</p>
+  <div class="add-container">
+    <button class="add-button" [routerLink]="['/dinosaurs']">Search dinosaurs to start your first analysis!</button>
+  </div>
+  } @else {
+  <div class="analysis-list">
+    @for (item of analysisList(); track item.id) {
+    <div class="analysis-card" [routerLink]="['/analysis-details', item.id]">
+      <h2>{{ item.name }}</h2>
+      <p>{{ item.description }}</p>
+
+      <div class="details">
+        <p><b>Habitat:</b> {{ item.habitat || '-' }}</p>
+        <p><b>Diet:</b> {{ item.diet || '-' }}</p>
+        <p><b>Period:</b> {{ item.era || '-' }}</p>
+        <p><b>Notes:</b> {{ item.notes || '-' }}</p>
+      </div>
+      <div class="actions">
+        <button mat-icon-button color="warn" (click)="deleteAnalysis(item.id!)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </div>
+    </div>
+    }
+  </div>
+  }
+  }
+</div>

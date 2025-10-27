@@ -1,0 +1,93 @@
+.analysis-container {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #4d392d;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.analysis-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.analysis-card {
+  background: #ddeee2;
+  border: 2px solid #95a59a;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.analysis-card:hover {
+  transform: translateY(-4px);
+}
+
+.analysis-card h2 {
+  font-size: 1.3rem;
+  margin: 0 0 0.5rem;
+  color: #000000;
+}
+
+.analysis-card p {
+  margin: 0.2rem 0;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.details {
+  margin-top: 0.8rem;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.details p {
+  margin: 0.2rem 0;
+}
+
+button[mat-icon-button] {
+  margin-top: 0.8rem;
+  float: right;
+  color: #2a1f1f;
+}
+
+button[mat-icon-button]:hover {
+  background-color: rgba(217, 83, 79, 0.1);
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.1rem;
+  margin-top: 0.8rem;
+}
+
+.no-analysis {
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.add-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.add-button {
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  background-color: rgb(174, 204, 174);
+}
+
+.add-button:hover {
+  background-color: rgb(105, 120, 105);
+}

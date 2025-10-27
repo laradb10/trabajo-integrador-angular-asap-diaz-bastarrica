@@ -1,0 +1,35 @@
+<header class="navbar">
+    <div class="nav-left">
+        <button class="burger" (click)="toggleMenu()">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <img src="assets/trex.svg" alt="Dino Icon" class="logo-icon" />
+        <h1 class="logo">DinoLab</h1>
+    </div>
+
+    @if (menuOpen) {
+    <div class="overlay" (click)="closeMenu()"></div>
+    }
+
+    <nav class="menu" [class.open]="menuOpen">
+        <a [routerLink]="['/home']" (click)="closeMenu()">
+            <mat-icon>home</mat-icon> Home
+        </a>
+        <a [routerLink]="['/dinosaurs']" (click)="closeMenu()">
+            <mat-icon>pets</mat-icon> Dinosaurs
+        </a>
+        <a [routerLink]="['/favorites']" (click)="closeMenu()">
+            <mat-icon>favorite_border</mat-icon> Favorites
+        </a>
+        <a [routerLink]="['/analysis']" (click)="closeMenu()">
+            <mat-icon>analytics</mat-icon> Analysis
+        </a>
+
+    </nav>
+</header>
+
+<main class="page">
+    <div class="container">
+        <router-outlet></router-outlet>
+    </div>
+</main>
