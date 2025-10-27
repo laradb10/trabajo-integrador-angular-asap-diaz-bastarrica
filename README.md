@@ -5,7 +5,7 @@ Para correr en local la pagina:
 # Instalar dependencias
 npm install
 
-# Agregar Angular Material (para iconos y componentes base)
+# Agregar Angular Material (para iconos)
 ng add @angular/material
 
 # Instalar json-server (persistencia de datos)
@@ -20,5 +20,6 @@ npm run favorites
 # Servidor de analisis
 npm run analysis 
 
-# correr local hots
+# correr local host
 ng serve
+
